@@ -1,1 +1,0 @@
-import{_ as a,o as r,c as n}from"./index-e8016417.js";const t={name:"UkrainianPage",computed:{ukrainianPageURL(){return"/Keyo_Home_ua.html"}}},o=["src"];function c(i,s,_,m,u,e){return r(),n("iframe",{src:e.ukrainianPageURL,title:"Ukrainian Page",frameborder:"0",width:"100%"},null,8,o)}const f=a(t,[["render",c]]);export{f as default};
