@@ -1,1 +1,0 @@
-import{_ as t,o as r,c}from"./index-0411a981.js";const n={name:"EnglishPage",computed:{englishPageURL(){return"/Keyo _ Home _ Secure Privacy-centric Biometric Identity Network.html"}}},o=["src"];function s(a,i,l,_,m,e){return r(),c("iframe",{src:e.englishPageURL,title:"English Page",frameborder:"0",width:"100%"},null,8,o)}const d=t(n,[["render",s]]);export{d as default};
