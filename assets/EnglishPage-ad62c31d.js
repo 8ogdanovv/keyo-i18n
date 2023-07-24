@@ -1,0 +1,1 @@
+import{_ as t,o as r,c as s}from"./index-e8016417.js";const n={name:"EnglishPage",computed:{englishPageURL(){return"/Keyo_Home.html"}}},a=["src"];function o(c,l,i,_,g,e){return r(),s("iframe",{src:e.englishPageURL,title:"English Page",frameborder:"0",width:"100%"},null,8,a)}const h=t(n,[["render",o]]);export{h as default};
