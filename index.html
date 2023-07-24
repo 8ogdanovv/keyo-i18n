@@ -8,13 +8,105 @@
     <style>
       body {
         margin: 0;
+        overflow: hidden;
+      }
+      .select {
+        position: fixed;
+        z-index: 9999;
+        padding: 5px;
+        border: 1px solid #ccc;
+        background-color: #fff8;
+        border-radius: 5px;
+
+        top: 28px;
+
+        display: flex;
+        flex-direction: row;
+        --size: calc(1.5rem + 12px);
+      }
+
+      label {
+        position: relative;
+        display: block;
+        width: var(--size);
+        height: var(--size);
+        background-image: url(https://cdn3.iconfinder.com/data/icons/finalflags/256/Ukraine-Flag.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      select {
+        height: var(--size);
+        font-size: 1rem;
+        line-height: var(--size);
+        position: relative;
+        top: -50%;
+        left: 0;
+      }
+
+      iframe {
+        height: 100vh;
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      @media (orientation: portrait) {
+        .select {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        select {
+          padding: 0 0.5rem;
+        }
+      }
+
+      @media (orientation: landscape) {
+        .select {
+          right: 1rem;
+        }
       }
     </style>
-    <script type="module" crossorigin src="/keyo-i18n/assets/index-8e0d532a.js"></script>
-    <link rel="stylesheet" href="/keyo-i18n/assets/index-e101af44.css">
   </head>
   <body>
-    <div id="app"></div>
-    
+    <div class="select">
+      <label
+        for="langSelect"
+        id="selectLabel"
+      ></label>
+      <select id="langSelect">
+        <option value="ua">Українська</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    <iframe src="" title="" frameborder="0" id="frameLayout"></iframe>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const langSelectElement = document.getElementById('langSelect');
+        
+        function handleSelect() {
+          const frameLayout = document.getElementById('frameLayout');
+          const selectFlag = document.getElementById('selectLabel');
+          const selectedLanguage = document.getElementById('langSelect').value;
+          console.log(selectedLanguage)
+
+          const frameLink = selectedLanguage === 'ua' ? '/Keyo_Home_ua.html' : '/Keyo_Home.html';
+          const frameTitle = selectedLanguage === 'ua' ? 'Ukrainian Page' : 'English Page';
+
+          selectFlag.style.backgroundImage = selectedLanguage === 'ua' ? 'url(https://cdn3.iconfinder.com/data/icons/finalflags/256/Ukraine-Flag.png)' : 'url(https://icons.iconarchive.com/icons/custom-icon-design/all-country-flag/256/Jarvis-Island-Flag-icon.png)';
+
+          frameLayout.src = frameLink;
+          frameLayout.title = frameTitle;
+        }
+
+        // Call the function to initialize the iframe and background image based on the default selected language
+        handleSelect();
+
+        // Add event listener to change iframe and background image when selecting a different language
+        langSelectElement.addEventListener('change', handleSelect);
+      });
+    </script>
   </body>
 </html>
