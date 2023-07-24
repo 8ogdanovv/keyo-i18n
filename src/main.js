@@ -5,11 +5,11 @@ import App from './App.vue';
 const routes = [
   {
     path: '/en',
-    component: () => import('./components/EnglishPage.vue'),
+    component: () => import('@/components/EnglishPage.vue'),
   },
   {
     path: '/ua',
-    component: () => import('./components/UkrainianPage.vue'),
+    component: () => import('@/components/UkrainianPage.vue'),
   },
   {
     path: '/',
@@ -25,3 +25,7 @@ const router = createRouter({
 const app = createApp(App);
 app.use(router);
 app.mount('#app');
+
+// base: process.env.NODE_ENV === 'production'
+// ? '/keyo-i18n/'
+// : '/',

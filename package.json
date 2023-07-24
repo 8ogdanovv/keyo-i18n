@@ -1,8 +1,8 @@
 {
   "name": "keyo-i18n",
   "private": true,
+  "homepage": "https://vadym4che.github.io/keyo-i18n/",
   "version": "0.0.0",
-  "homepage": "https://vadym4che.github.io/keyo-i18n",
   "type": "module",
   "scripts": {
     "dev": "vite",
