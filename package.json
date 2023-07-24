@@ -2,11 +2,13 @@
   "name": "keyo-i18n",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://vadym4che.github.io/keyo-i18n",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "vue": "^3.2.36",
